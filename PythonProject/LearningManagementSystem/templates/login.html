@@ -1,0 +1,24 @@
+{% extends 'index.html' %}
+
+{% block 'body' %}
+<h3 align="center"><u>Admin Login</u></h3>
+<form method="post" action="{% url 'checkadminlogin' %}">
+
+    {% csrf_token %}
+
+    <table align="center" border="3">
+        <tr>
+<td>Enter Username</td>
+            <td><input type="text" name="uname" required/></td>
+        </tr>
+        <tr>
+<td>Enter Password</td>
+            <td><input type="password" name="pwd" required/></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="login"></td>
+                  <td><input type="reset" value="clear"></td>
+        </tr>
+    </table>
+</form>
+{% endblock %}
